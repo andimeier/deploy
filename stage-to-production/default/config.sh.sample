@@ -43,4 +43,8 @@ CONFIG_DEST=config
 # a call of the following form:
 #    sudo service $APP_SERVICE_NAME restart
 # It will be launched after the deployment using the parameter 'restart'.
+# This parameter is optional. If omitted or empty, no restart will be 
+# initiated. This is ok when e.g. only webapp pages have been deployed, 
+# but no service has to be restarted in order for the application to take 
+# effect.
 APP_SERVICE_NAME=service_name
