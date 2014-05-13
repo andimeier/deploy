@@ -1,0 +1,45 @@
+# Filename of version file which will be written by this build hook.
+# The version info to be written to this file will be extracted 
+# from the package.json file in the project root.
+# This is optional. If not given, no version info file will be created.
+VERSION_JSON=version.json
+
+# Base directory which the app will be deployed to. This directory is expected 
+# to look like this:
+# DEPLOY_BASE_DIR
+#  |
+#  +- config ... config files which will be copied to the deployed app
+#  +- 20140101-080010
+#  +- 20140110-091327 ... timestamped (former and current) deployments
+#  +- app ... symlink pointing to the latest deployment (in this case, pointing 
+#             to 20140110-091327
+# 
+# For each deployment, a new timestamp-syntaxed directory will be 
+# created in this directory. The syntax of the deploy dir will be
+# YYYYMMDD-hhmmss.
+DEPLOY_BASE_DIR=/var/www/eck-zimmer.at/idot_stage.rest
+
+# Filename of the symlink pointing to the current application.
+# Will be adapted after deploy to point to the newly deployed app.
+# The symlink will be interpreted relative to the DEPLOY_BASE_DIR.
+SYMLINK=app
+
+# Directory of config files (source).
+# All config script in this directory will be copied to the
+# config directory of the newly deployed app.
+# The path can be absolute or relative. If relative, it is 
+# interpreted relative to DEPLOY_BASE_DIR.
+CONFIG_SRC=$DEPLOY_BASE_DIR/config
+
+# Config directory of the application.
+# This is the target directory to which all config file from
+# CONFIG_SRC will be copied.
+# The path must be relative to DEPLOY_DIR, in other word, relative
+# to the app root.
+CONFIG_DEST=config
+
+# Service name for the app. This will be used for restarting the
+# app service after successful deployment. The given name is expected
+# to be a init.d style start/stop script. It will be launched after 
+# the deployment using the parameter 'restart'.
+APP_SERVICE_NAME=idot_stage
