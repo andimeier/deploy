@@ -17,6 +17,7 @@ Performs the following steps:
 4. copy to application folder, into a timestamped directory
 5. add target specific config file
 6. modify the symlink `app` in the application folder so that it points to the newly deployed version
+7. restart the app service
 
 ### Install
 

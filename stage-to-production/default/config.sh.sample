@@ -1,8 +1,6 @@
-# Filename of version file which will be written by this build hook.
-# The version info to be written to this file will be extracted 
-# from the package.json file in the project root.
-# This is optional. If not given, no version info file will be created.
-VERSION_JSON=version.json
+# Location of staged application. The entire content of this directory
+# will be copied to the prod location.
+STAGED_APP=/var/www/application/app
 
 # Base directory which the app will be deployed to. This directory is expected 
 # to look like this:
