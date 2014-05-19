@@ -3,9 +3,12 @@ deploy
 
 This is collection of deploy tools.
 
-Directory `git-hooks`
----------------------
+Since there are different mechanisms which differ very much from each other, 
+each subdirectory contains a specific "method" for deployment. 
+Further details about the specific deployment method is described in the respective README files 
+in the subdirectories.
 
-^ Script ^ Description ^
-| `post-receive` | post-receive hook which deploys as soon as the repo receives a push |
 
+^ Directory ^ Description ^
+| `git-hook` | deployment triggered by git-push |
+| `stage-to-production` | copy staged applications to the production site |

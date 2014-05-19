@@ -30,4 +30,4 @@ To enable the deploy hook for a repo:
 
 ### Suggestions
 
-* use deploy branch or at least make the branc configurable
+* use deploy branch or at least make the branch configurable

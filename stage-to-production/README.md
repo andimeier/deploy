@@ -22,4 +22,4 @@ To use the script:
 1. copy the script `deploy_stage_to_production.sh` to any folder you like, set chmod to 755.
 2. add a `config.sh` file in the same directory (you can use the file `config.sh.sample` as a template). This should be populated with the actual configuration values.
 
-**Note:** you may have to do a `fromdos` for the shell script to run smoothly without warnings.
+**Note:** you may have to do a `fromdos` for the shell script and the sourced config script to run smoothly without warnings.
