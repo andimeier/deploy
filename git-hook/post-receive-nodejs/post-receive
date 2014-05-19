@@ -8,7 +8,8 @@
 # ============
 
 # import config settings
-. ./config.sh
+# the hook will be run from the repo directory as PWD
+. hooks/config.sh
 
 # CONFIG END
 # ==========
