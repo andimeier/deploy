@@ -12,3 +12,4 @@ in the subdirectories.
 ^ Directory ^ Description ^
 | `git-hook` | deployment triggered by git-push |
 | `stage-to-production` | copy staged applications to the production site |
+| `copy-to-server` | copy applications from local workspace to a remote site |

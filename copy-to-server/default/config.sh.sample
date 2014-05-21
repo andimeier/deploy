@@ -1,0 +1,28 @@
+# filename of version file which will be written by this build hook
+# the version info will be extracted from the bower.json file
+# in /
+VERSION_JSON=dist/version.json
+
+# SCP connection details
+# If you want to avoid being asked for the SSH password on each SSH operation,
+# be sure to have your SSH key authorized at the server.
+SCP_HOST=server.com
+SCP_USER=deployuser
+
+# base directory in which the app will be deployed.
+# A new timestamp-syntaxed directory will be created.
+DEPLOY_BASE_DIR=/var/www/eck-zimmer.at/idot_stage
+
+# filename of the symlink pointing to the current application
+# (will be adapted after deploy to point to the newly deployed app)
+SYMLINK=$DEPLOY_BASE_DIR/app
+
+# directory of config files (source)
+CONFIG_SRC=$DEPLOY_BASE_DIR/config
+
+# Config directory of the application.
+# This is the target directory to which all config file from
+# CONFIG_SRC will be copied.
+# The path must be relative to the deployment folder, in other words,
+# relative to the app root.
+CONFIG_DEST=scripts

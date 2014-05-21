@@ -1,6 +1,6 @@
 The directory `stage-to-production` contains scripts which deploy the app from the staged version to the productive location. No repo involved, since we should be sure that exactly the staged and tested version is deployed.
 
-Depending on the type of application there might be several "ways to do it", thus several deploy script. The different types of deploy methods (scripts) are located in the several subdirectories:
+Depending on the type of application there might be several "ways to do it", thus several deploy scripts. The different types of deploy methods (scripts) are located in the several subdirectories:
 
 * **default** ... standard way of copying plus configuring the app 
 
@@ -10,7 +10,7 @@ This folder contains the standard way of deploying from stage to production.
 
 Not too exciting features here, the following steps are performed:
 
-1. copy everyting from the stage folder into a timestamped directory
+1. copy everything from the stage folder into a timestamped directory
 2. add target specific config file
 3. modify the symlink `app` in the application folder so that it points to the newly deployed version
 4. restart the app service
