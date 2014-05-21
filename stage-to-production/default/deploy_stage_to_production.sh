@@ -2,14 +2,15 @@
 #
 # AZ:
 # Deploy an app "as is" from the stage location to the productive location.
-# Only the config will be adapted.
+# Only the config will be adapted by overwriting stage config files by
+# production config file.
 #
 
 # CONFIG START
 # ============
 
 # import config settings
-. ./config.sh
+. "`dirname $0`/config.sh"  
 
 # CONFIG END
 # ==========
