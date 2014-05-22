@@ -75,6 +75,10 @@ ssh $SCP_HOST -l $SCP_USER "find $TARGET_DIR -type d -exec chmod 755 {} \;; find
 echo "Copying config files"
 CONFIG_DEST=$TARGET_DIR/$CONFIG_DEST
 ssh $SCP_HOST -l $SCP_USER "cp -r $CONFIG_SRC/* $CONFIG_DEST"
+if [ -n "$FAVICON_DIR" ] ; then
+	echo "Copying favicon files"
+	ssh $SCP_HOST -l $SCP_USER "cp $FAVICON_DIR/* $TARGET_DIR"
+fi
 
 echo "Adapting symlink to current app version"
 ssh $SCP_HOST -l $SCP_USER "rm $SYMLINK && ln -s $ts $SYMLINK"

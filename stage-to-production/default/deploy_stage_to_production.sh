@@ -19,11 +19,14 @@
 # check if all required config settings have been set
 ok=1
 for c in STAGED_APP DEPLOY_BASE_DIR SYMLINK CONFIG_SRC CONFIG_DEST ; do
-	if [ "${!c}" == "" ] ; then  echo "Error: config setting $c not set. Aborting."; ok=0 ; fi
+	if [ -z "${!c}" ] ; then  echo "Error: config setting $c not set. Aborting."; ok=0 ; fi
 done
 # check if directories exist
-for c in STAGED_APP DEPLOY_BASE_DIR ; do
-	if ! -d ${!c} ; then  echo "Error: configured directory ${!c} (should be $c) not found. Aborting."; ok=0 ; fi
+for c in STAGED_APP DEPLOY_BASE_DIR FAVICON_DIR ; do
+	if [ -n "$!c}" -a ! -d ${!c} ] ; then
+		echo "Error: configured directory ${!c} (should be $c) not found. Aborting."; 
+		ok=0 ; 
+	fi
 done
 if [ $ok == 0 ] ; then
 	exit 1
@@ -46,6 +49,12 @@ echo "Copying config files"
 # mkdir if not exists:
 mkdir -p $TARGET_DIR/$CONFIG_DEST
 cp -r $CONFIG_SRC/* $TARGET_DIR/$CONFIG_DEST
+
+if [ -n "$FAVICON_DIR" ] ; then
+	echo "Copying favicon files"
+	cp $FAVICON_DIR/* $TARGET_DIR
+fi
+
 
 echo "Adapting symlink to current app version"
 rm $SYMLINK

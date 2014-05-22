@@ -48,3 +48,7 @@ CONFIG_DEST=config
 # but no service has to be restarted in order for the application to take 
 # effect.
 APP_SERVICE_NAME=service_name
+
+# [optional] path to favicon files. If given, all file within this directory
+# will be copied to the application root
+FAVICON_DIR=$DEPLOY_BASE_DIR/favicon

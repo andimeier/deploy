@@ -26,3 +26,7 @@ CONFIG_SRC=$DEPLOY_BASE_DIR/config
 # The path must be relative to the deployment folder, in other words,
 # relative to the app root.
 CONFIG_DEST=scripts
+
+# [optional] path to favicon files. If given, all file within this directory
+# will be copied to the application root
+FAVICON_DIR=$DEPLOY_BASE_DIR/favicon
