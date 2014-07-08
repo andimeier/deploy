@@ -22,7 +22,7 @@ for c in DEPLOY_BASE_DIR SYMLINK CONFIG_SRC CONFIG_DEST ; do
 done
 # check if directories exist
 for c in DEPLOY_BASE_DIR ; do
-	if ! -d ${!c} ; then  echo "Error: configured directory ${!c} (should be $c) not found. Aborting."; ok=0 ; fi
+	if [ ! -d ${!c} ] ; then  echo "Error: configured directory ${!c} (should be $c) not found. Aborting."; ok=0 ; fi
 done
 if [ $ok == 0 ] ; then
 	exit 1

@@ -1,18 +1,18 @@
 ## Not working yet
 
-**In idot/deploy funktioniert, aber diese extrahierte Version noch nicht, ungeloest: wie referenziere ich
-das bower.json? Muss das Skript in einem bestimmten Dir gestartet werden? Integrieren in npm? Oder grunt?**
+**In idot/deploy funktioniert das - aber diese generalisierte Version noch nicht. Ungeloest: wie referenziere ich
+das ``bower.json``? Muss das Skript in einem bestimmten Dir gestartet werden? Integrieren in npm? Oder grunt?**
 
 
-The directory `scp` contains scripts which deploy the app from the localo workspace to a remote server. No repo involved. 
+The directory `scp` contains scripts which deploy the app from the locale workspace to a remote server. No repo involved. 
 
 An example use is deploying AngularJS apps to the staging server, because usually Grunt would pack the application locally and prepare it for deployment, compressing, concating and minifying the JavaScript sources. Since these deployment tasks are already executed locally, we should take advantage of this preparation and copy the packed application directly to the server.
 
 Depending on the type of application there might be several "ways to do it", thus several deploy scripts. The different types of deploy methods (scripts) are located in the several subdirectories:
 
-* **default** ... standard way of copying plus configuring the app 
+* **bower-app** ... standard way of copying plus configuring an using ``bower`` as frontend package manager. 
 
-## default
+## bower-app
 
 This folder contains the standard way of deploying from stage to production.
 
@@ -32,4 +32,4 @@ To use the script:
 1. copy the script `deploy.sh` to any folder you like, set chmod to 755.
 2. add a `config.sh` file in the same directory (you can use the file `config.sh.sample` as a template). This should be populated with the actual configuration values.
 
-**Note:** you may have to do a `fromdos` for the shell script and the sourced config script to run smoothly without warnings.
+**Note:** to make sure that the script will run smoothly without warnings, you may have to do a `fromdos` for the shell script and the sourced config script.
