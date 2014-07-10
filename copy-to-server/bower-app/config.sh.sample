@@ -21,7 +21,7 @@ SYMLINK=$DEPLOY_BASE_DIR/app
 CONFIG_SRC=$DEPLOY_BASE_DIR/config
 
 # Config directory of the application.
-# This is the target directory to which all config file from
+# This is the target directory to which all config files from
 # CONFIG_SRC will be copied.
 # The path must be relative to the deployment folder, in other words,
 # relative to the app root.

@@ -25,11 +25,18 @@ Not too exciting features here, the following steps are performed:
 5. overwrite config files by the prepared server-specific config files which are stored on the remote server
 6. modify the symlink `app` in the application folder so that it points to the newly deployed version
 
+### Workflow
+
+1. ``grunt build:stage``. This will package the application into the ``dist/`` directory. 
+2. ``deploy.sh``. Copy the ``dist/`` directory onto the server and perform further deployment steps. Depending on where you put the script, you might have to add a relative path to the script. However, **the script must be started from ``$PROJECT_ROOT``** in order to find the necessary files (e.g. ``bower.json``, ``dist`` folder, ...)
+
 ### Install
 
 To use the script:
 
-1. copy the script `deploy.sh` to any folder you like, set chmod to 755.
+1. copy the script `deploy.sh` to any folder you like, set chmod to 755. Note that the script must be started from ``$PROJECT_ROOT`` later.
 2. add a `config.sh` file in the same directory (you can use the file `config.sh.sample` as a template). This should be populated with the actual configuration values.
+3. start 
+
 
 **Note:** to make sure that the script will run smoothly without warnings, you may have to do a `fromdos` for the shell script and the sourced config script.
